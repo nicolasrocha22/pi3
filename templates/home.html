@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon">
+        <link rel="stylesheet" href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <title>Buriti Shop</title>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                <div class="container-fluid d-flex">
+                    <div class="justify-content-start">
+                        <a class="navbar-brand" href="#">
+                            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" width="36">
+                            Buriti Shop
+                        </a>
+                    </div>
+                    <div class="justify-content-center">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Pesquisa">
+                        </form>
+                    </div>
+                    <div class="justify-content-end">
+                        <button class="btn btn-success" type="submit">
+                            <img src="{{ url_for('static', filename='images/cart.svg') }}" alt="">
+                            <span class="text-dark">Carrinho</span>
+                            <span class="badge text-bg-dark">0</span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <div class="welcome">
+                <img src="{{ url_for('static', filename='images/amazon.jpg') }}" alt="amazon" id="welcome_img">
+                <div id="welcome_text">
+                    <h4>Bem-vindo!</h4>
+                    <!-- Placeholder text -->
+                    <p>青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な 霧の中 神社の石段を かけ上がり 手を合わせ泣いてた小さな子 淋しくて 悲しくて</p>
+                    <!--<p>
+                        "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                        I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                        The way that I am, when you come around; I hope you'll understand, someday
+                    </p>-->
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                    type="button" role="tab">Início</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                    type="button" role="tab">Alimentos</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                    type="button" role="tab">Artesanato</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled"
+                    type="button" role="tab">Outros</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                tabindex="0">
+                    <h3>Mais vendidos</h3>
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/acai.jpg') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto 1</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        <!-- Placeholder text -->
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <!--<p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>-->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/couve.jpg') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto 2</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        <!-- Placeholder text -->
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <!--<p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>-->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/cuia.jpg') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto 3</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        <!-- Placeholder text -->
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <!--<p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>-->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <h3>Novos produtos</h3>
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        <!-- Placeholder text -->
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <!--<p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>-->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        <!-- Placeholder text -->
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <!--<p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>-->
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" tabindex="0">
+                    <p>...</p>
+                    <!--<h3>Alimentos</h3>
+                    <p>
+                        <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#filter">Filtro</button>
+                        <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#sort">Organizar</button>
+                    </p>
+                    <div class="catalog row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                    <p>...</p>
+                    <!--<h3>Artesanato</h3>
+                    <p>
+                        <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#filter">Filtro</button>
+                        <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#sort">Organizar</button>
+                    </p>
+                    <div class="catalog row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
+                    <p>...</p>
+                    <!--<h3>Outros</h3>
+                    <p>
+                        <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#filter">Filtro</button>
+                        <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#sort">Organizar</button>
+                    </p>
+                    <div class="catalog row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a class="not-link" href="#">
+                                <div class="card border-dark shadow">
+                                    <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Produto</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">R$ 0,00</h6>
+                                        Placeholder text
+                                        <p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                                        <p class="card-text">
+                                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                                            The way that I am, when you come around; I hope you'll understand, someday
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="filter">
+                    <div class="offcanvas-header bg-dark text-light">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Filtro</h5>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas">Fechar</button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <p>
+                            <p>Preço</p>
+                            <select class="form-select">
+                                <option selected></option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </p>
+                        <p>
+                            <p>Localização</p>
+                            <select class="form-select">
+                                <option selected></option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </p>
+                        <p>
+                            <p>Detalhes do anúncio</p>
+                            <select class="form-select">
+                                <option selected></option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </p>
+                    </div>
+                </div>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="sort">
+                    <div class="offcanvas-header bg-dark text-light">
+                        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Organizar</h5>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="offcanvas">Fechar</button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <p>
+                            <h6>Preço</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sort" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">Apartir de R$30</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sort" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">Abaixo de R$30</label>
+                            </div>
+                        </p>
+                        <hr>
+                        <p>
+                            <h6>Vendas</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sort" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">Mais vendidos</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sort" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">Menos vendidos</label>
+                            </div>
+                        </p>
+                        <hr>
+                        <p>
+                            <h6>Relevância</h6>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sort" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">Mais relevantes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sort" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">Menos relevantes</label>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-dark text-light mt-auto">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10 col-md-6">
+                        <br><h5 class="footer-text">Buriti Shop</h5>
+                        <!-- Placeholder text -->
+                        <p class="footer-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>
+                        <!--<p class="footer-text">
+                            "If I ask you, would you stay? If I plead with you, would you come back my way?"
+                        </p>-->
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <br><h6>Links</h6>
+                        <a href="/" class="btn btn-success btn-sm">Início</a>
+                        <a href="/about" class="btn btn-success btn-sm">Sobre</a>
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#creditsModal">Créditos</button>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <br><h6>Conta</h6>
+                        <!--<div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="switchTheme" onclick="switchTheme()" disabled>
+                            <label class="form-check-label" for="switchTheme">Modo Escuro</label>
+                        </div>-->
+                        <button class="btn btn-outline-success" type="button" id="login_btn">
+                            <img src="{{ url_for('static', filename='images/account.png') }}" alt="account" width="36">
+                            User
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="creditsModal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header bg-dark text">
+                            <h1 class="modal-title fs-5">Créditos</h1>
+                        </div>
+                        <div class="modal-body text-dark">
+                            <!--<h5>Buriti Shop</h5>-->
+                            <img src="{{ url_for('static', filename='images/banner.webp') }}" alt="" id="banner_img">
+                            <p>
+                                <strong>Equipe: </strong>
+                                Lucas Barros, Nícolas Rocha e Paula Martins;
+                            </p>
+                            <p>
+                                <strong>Orientador: </strong>
+                                Prof. Marcos Paulo;
+                            </p>
+                            <div>
+                                <strong>Ícones utilizados: </strong>
+                                <div>
+                                    <a href="https://www.flaticon.com/free-icons/fruits-and-vegetables" title="fruits and vegetables icons">Fruits and vegetables icons created by wanicon - Flaticon</a>
+                                <a href="https://www.flaticon.com/br/icones-gratis/pessoas" title="pessoas ícones">Pessoas ícones criados por Freepik - Flaticon</a>
+                                </div>
+                            </div>
+                            <hr>
+                            <p>Este projeto está sendo licensiado sob a ISC License, <a href="https://choosealicense.com/licenses/isc/">clique aqui para mais detalhes</a>.</p>
+                        </div>
+                        <div class="modal-footer bg-dark">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    </body>
+</html>
