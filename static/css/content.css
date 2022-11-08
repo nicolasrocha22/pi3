@@ -1,0 +1,23 @@
+header {
+    margin-top: 6% !important;
+}
+
+.card {
+    margin-left: 5%;
+}
+
+.rating {
+    margin-top: 2% !important;
+}
+
+.checked {
+    color: orange;
+}
+
+.price {
+    margin-top: 2%;
+}
+
+.row {
+    margin-bottom: 3% !important;
+}

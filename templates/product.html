@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon">
+        <link rel="stylesheet" href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/content.css') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Buriti Shop</title>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+                <div class="container-fluid d-flex">
+                    <div class="justify-content-start">
+                        <a class="navbar-brand" href="#">
+                            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" width="36">
+                            Buriti Shop
+                        </a>
+                    </div>
+                    <div class="justify-content-center">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Pesquisa">
+                        </form>
+                    </div>
+                    <div class="justify-content-end">
+                        <button class="btn btn-success" type="submit">
+                            <img src="{{ url_for('static', filename='images/cart.svg') }}" alt="">
+                            <span class="text-dark">Carrinho</span>
+                            <span class="badge text-bg-dark">0</span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card border-dark shadow" style="max-width: 700px;">
+                        <img src="{{ url_for('static', filename='images/placeholder.png') }}" class="card-img" alt="">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card border-dark shadow mb-3" style="max-width: 600px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Produto 1</h5>
+                            <span class="rating">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </span>
+                            <h4 class="price">R$0,00</h4>
+                            <p class="card-text"><small class="text-muted">Vendendor: <a href="#">???</a></small></p>
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-success" type="button">Adicionar ao carrinho</button>
+                                <button class="btn btn-outline-success" type="button">Comprar agora</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card border-dark shadow" style="max-width: 950px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Sobre o produto</h5>
+                        <!-- Placeholder text -->
+                        <!--<p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>-->
+                        <p class="card-text">
+                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
+                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
+                            The way that I am, when you come around; I hope you'll understand, someday
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card border-dark shadow" style="max-width: 950px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Detalhes</h5>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-dark text-light mt-auto">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10 col-md-6">
+                        <br><h5 class="footer-text">Buriti Shop</h5>
+                        <!-- Placeholder text -->
+                        <p class="footer-text">私のことを決して本気で愛さないで, 恋なんてただのゲーム, 楽しめばそれでいいの</p>
+                        <!--<p class="footer-text">
+                            "If I ask you, would you stay? If I plead with you, would you come back my way?"
+                        </p>-->
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <br><h6>Links</h6>
+                        <a href="/" class="btn btn-success btn-sm">Início</a>
+                        <a href="/about" class="btn btn-success btn-sm">Sobre</a>
+                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#creditsModal">Créditos</button>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <br><h6>Conta</h6>
+                        <!--<div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="switchTheme" onclick="switchTheme()" disabled>
+                            <label class="form-check-label" for="switchTheme">Modo Escuro</label>
+                        </div>-->
+                        <button class="btn btn-outline-success" type="button" id="login_btn">
+                            <img src="{{ url_for('static', filename='images/account.png') }}" alt="account" width="36">
+                            User
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="creditsModal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header bg-dark text">
+                            <h1 class="modal-title fs-5">Créditos</h1>
+                        </div>
+                        <div class="modal-body text-dark">
+                            <!--<h5>Buriti Shop</h5>-->
+                            <img src="{{ url_for('static', filename='images/banner.webp') }}" alt="" id="banner_img">
+                            <p>
+                                <strong>Equipe: </strong>
+                                Lucas Barros, Nícolas Rocha e Paula Martins;
+                            </p>
+                            <p>
+                                <strong>Orientador: </strong>
+                                Prof. Marcos Paulo;
+                            </p>
+                            <div>
+                                <strong>Ícones utilizados: </strong>
+                                <div>
+                                    <a href="https://www.flaticon.com/free-icons/fruits-and-vegetables" title="fruits and vegetables icons">Fruits and vegetables icons created by wanicon - Flaticon</a>
+                                <a href="https://www.flaticon.com/br/icones-gratis/pessoas" title="pessoas ícones">Pessoas ícones criados por Freepik - Flaticon</a>
+                                </div>
+                            </div>
+                            <hr>
+                            <p>Este projeto está sendo licensiado sob a ISC License, <a href="https://choosealicense.com/licenses/isc/">clique aqui para mais detalhes</a>.</p>
+                        </div>
+                        <div class="modal-footer bg-dark">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    </body>
+</html>
