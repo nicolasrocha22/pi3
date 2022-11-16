@@ -16,7 +16,7 @@
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
                 <div class="container-fluid d-flex">
                     <div class="justify-content-start">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="/">
                             <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" width="36">
                             Buriti Shop
                         </a>
@@ -107,6 +107,36 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="card border-dark shadow" style="max-width: 950px;">
+                    <div class="card-body">
+                        <h4 class="card-title">Comentários e avaliações</h4>
+                        <p class="small">Mantenha respeito nos comentários e siga as nossas <a data-bs-toggle="collapse" href="#rules_box">regras.</a></p>
+                        <div class="collapse" id="rules_box">
+                            <div class="card card-body bg-danger text-light">
+                                <ul>
+                                    <li>Não é permitido escrever comentário com spoiler visível.</li>
+                                    <li>Não é permitido linguagem ofensiva ou inapropriada.</li>
+                                    <li>Não é permitido spam.</li>
+                                    <li>Caso queira reportar um comentário, aperte no botão de reportar abaixo do comentário.</li>
+                                </ul>
+                            </div>
+                            <br>
+                        </div>
+                        <p>
+                            <strong>Avaliação: </strong>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </p>
+                        <textarea class="form-control border-dark" name="comment_text" id="comment_text" cols="52" rows="10" placeholder="Digite seu comentario aqui"></textarea>
+                        <button type="button" class="btn btn-success" onclick="displayComment()">Comentar</button>
+                    </div>
+                    <span id="comment_area"></span>
+                </div><br>
+            </div>
         </main>
         <footer class="bg-dark text-light mt-auto">
             <div class="container-fluid">
@@ -114,10 +144,10 @@
                     <div class="col-sm-10 col-md-6">
                         <br><h5 class="footer-text">Buriti Shop</h5>
                         <!-- Placeholder text -->
-                        <p class="footer-text">私のことを決して本気で愛さないで, 恋なんてただのゲーム, 楽しめばそれでいいの</p>
-                        <!--<p class="footer-text">
+                        <!--<p class="footer-text">私のことを決して本気で愛さないで, 恋なんてただのゲーム, 楽しめばそれでいいの</p>-->
+                        <p class="footer-text">
                             "If I ask you, would you stay? If I plead with you, would you come back my way?"
-                        </p>-->
+                        </p>
                     </div>
                     <div class="col-xs-6 col-md-3">
                         <br><h6>Links</h6>
@@ -173,5 +203,6 @@
             </div>
         </footer>
         <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     </body>
 </html>

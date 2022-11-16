@@ -21,3 +21,7 @@ header {
 .row {
     margin-bottom: 3% !important;
 }
+
+textarea {
+    margin-bottom: 1%;
+}
