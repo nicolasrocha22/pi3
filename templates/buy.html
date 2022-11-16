@@ -56,10 +56,6 @@
                             </span>
                             <h4 class="price">R$0,00</h4>
                             <p class="card-text"><small class="text-muted">Vendendor: <a href="#">???</a></small></p>
-                            <div class="d-grid gap-2">
-                                <button class="btn btn-success" type="button">Adicionar ao carrinho</button>
-                                <a href="/buy" class="btn btn-outline-success">Comprar agora</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -67,75 +63,64 @@
             <div class="row">
                 <div class="card border-dark shadow" style="max-width: 950px;">
                     <div class="card-body">
-                        <h5 class="card-title">Sobre o produto</h5>
-                        <!-- Placeholder text -->
-                        <!--<p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>-->
-                        <p class="card-text">
-                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
-                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
-                            The way that I am, when you come around; I hope you'll understand, someday
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="card border-dark shadow" style="max-width: 950px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Detalhes</h5>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="card border-dark shadow" style="max-width: 950px;">
-                    <div class="card-body">
-                        <h4 class="card-title">Comentários e avaliações</h4>
-                        <p class="small">Mantenha respeito nos comentários e siga as nossas <a data-bs-toggle="collapse" href="#rules_box">regras.</a></p>
-                        <div class="collapse" id="rules_box">
-                            <div class="card card-body bg-danger text-light">
-                                <ul>
-                                    <li>Não é permitido escrever comentário com spoiler visível.</li>
-                                    <li>Não é permitido linguagem ofensiva ou inapropriada.</li>
-                                    <li>Não é permitido spam.</li>
-                                    <li>Caso queira reportar um comentário, aperte no botão de reportar abaixo do comentário.</li>
-                                </ul>
+                        <h5 class="card-title">Entrega</h5>
+                            <p>
+                                <strong>Seu endereço: </strong>
+                                Av. Alcindo Cacela, n.1523. Belém
+                                <strong> | Seu telefone: </strong>
+                                (91) 0000-0000
+                                <strong> | </strong>
+                                <a href="#">Alterar</a>
+                            </p>
+                            <p>
+                                <strong>Endereço do vendendor: </strong>
+                                Ilha das onças
+                                <strong> | Telefone do vendedor: </strong>
+                                (91) 0000-0000
+                            </p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">Entregar no seu endereço</label>
                             </div>
-                            <br>
-                        </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">Buscar no local do vendedor</label>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card border-dark shadow" style="max-width: 950px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Forma de pagamento</h5>
                         <p>
-                            <strong>Avaliação: </strong>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
+                            <strong>Forma de pagamento salvo: </strong>
+                            <img src="{{ url_for('static', filename='images/mc_symbol.svg') }}" alt="mc" width="50px">
+                            <span>Mastercard •••• 0000</span>
+                            <strong> | </strong>
+                            <a href="#">Alterar</a>
                         </p>
-                        <textarea class="form-control border-dark" name="comment_text" id="comment_text" cols="52" rows="10" placeholder="Digite seu comentario aqui"></textarea>
-                        <button type="button" class="btn btn-success" onclick="displayComment()">Comentar</button>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Cartão de Crédito</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Cartão de Débito</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                            <label class="form-check-label" for="inlineRadio3">Boleto</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                            <label class="form-check-label" for="inlineRadio4">PIX</label>
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto">
+                            <a class="btn btn-success" href="/final">Comprar</a>
+                        </div>
                     </div>
-                    <span id="comment_area"></span>
-                </div><br>
+                </div>
             </div>
         </main>
         <footer class="bg-dark text-light mt-auto">

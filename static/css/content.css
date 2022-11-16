@@ -25,3 +25,13 @@ header {
 textarea {
     margin-bottom: 1%;
 }
+
+.form-check-input:checked {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.mx-auto {
+    margin-top: 2%;
+    margin-bottom: 1%;
+}

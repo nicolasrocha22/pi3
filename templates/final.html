@@ -46,6 +46,7 @@
                 <div class="col-md-8">
                     <div class="card border-dark shadow mb-3" style="max-width: 600px;">
                         <div class="card-body">
+                            <h4>Produto comprado com sucesso</h4>
                             <h5 class="card-title">Produto 1</h5>
                             <span class="rating">
                                 <span class="fa fa-star checked"></span>
@@ -56,9 +57,12 @@
                             </span>
                             <h4 class="price">R$0,00</h4>
                             <p class="card-text"><small class="text-muted">Vendendor: <a href="#">???</a></small></p>
+                            <p>
+                                <strong>Pagamento: </strong>
+                                Boleto
+                            </p>
                             <div class="d-grid gap-2">
-                                <button class="btn btn-success" type="button">Adicionar ao carrinho</button>
-                                <a href="/buy" class="btn btn-outline-success">Comprar agora</a>
+                                <a class="btn btn-success" href="{{ url_for('static', filename='others/boleto.pdf') }}" target="_blank">Baixar boleto</a>
                             </div>
                         </div>
                     </div>
@@ -67,75 +71,16 @@
             <div class="row">
                 <div class="card border-dark shadow" style="max-width: 950px;">
                     <div class="card-body">
-                        <h5 class="card-title">Sobre o produto</h5>
-                        <!-- Placeholder text -->
-                        <!--<p class="card-text">青い空 白い雲 菜の花の小道を かけまわり ちょうちょとり遊んだふるさと まっ白な</p>-->
-                        <p class="card-text">
-                            "If I ask you, would you stay? If I plead with you, would you come back my way?";
-                            I want you to know, why I can't let you go; It's just this thing in my head that holds me down;
-                            The way that I am, when you come around; I hope you'll understand, someday
-                        </p>
+                        <h5 class="card-title">Buscar com o vendedor</h5>
+                            <p>
+                                <strong>Endereço do vendendor: </strong>
+                                Ilha das onças
+                                <strong> | Telefone do vendedor: </strong>
+                                (91) 0000-0000
+                            </p>
+                            <p>Após o pagamento do boleto, você poderá combinar a data e horário para buscar com o vendedor.</p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="card border-dark shadow" style="max-width: 950px;">
-                    <div class="card-body">
-                        <h5 class="card-title">Detalhes</h5>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="card border-dark shadow" style="max-width: 950px;">
-                    <div class="card-body">
-                        <h4 class="card-title">Comentários e avaliações</h4>
-                        <p class="small">Mantenha respeito nos comentários e siga as nossas <a data-bs-toggle="collapse" href="#rules_box">regras.</a></p>
-                        <div class="collapse" id="rules_box">
-                            <div class="card card-body bg-danger text-light">
-                                <ul>
-                                    <li>Não é permitido escrever comentário com spoiler visível.</li>
-                                    <li>Não é permitido linguagem ofensiva ou inapropriada.</li>
-                                    <li>Não é permitido spam.</li>
-                                    <li>Caso queira reportar um comentário, aperte no botão de reportar abaixo do comentário.</li>
-                                </ul>
-                            </div>
-                            <br>
-                        </div>
-                        <p>
-                            <strong>Avaliação: </strong>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </p>
-                        <textarea class="form-control border-dark" name="comment_text" id="comment_text" cols="52" rows="10" placeholder="Digite seu comentario aqui"></textarea>
-                        <button type="button" class="btn btn-success" onclick="displayComment()">Comentar</button>
-                    </div>
-                    <span id="comment_area"></span>
-                </div><br>
             </div>
         </main>
         <footer class="bg-dark text-light mt-auto">
